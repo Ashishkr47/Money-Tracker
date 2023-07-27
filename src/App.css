@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #333333;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333333;
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+h1 span {
+  font-size: 1rem;
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 11px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form input {
+  width: 100%;
+  background-color: #f3f4f6;
+  color: #333333;
+  border: 2px solid #d1d5db;
+  padding: 12px;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+form div.basic {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form button {
+  width: 100%;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 5px;
+  padding: 12px;
+  background-color: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+div.transactions {
+  margin-top: 30px;
+}
+
+div.transaction:first-child {
+  border-top: 0;
+}
+
+div.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #d1d5db;
+  transition: background-color 0.3s ease;
+}
+
+div.transaction:hover {
+  background-color: #f3f4f6;
+}
+
+div.transaction div.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+div.transaction div.description {
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+div.right {
+  text-align: right;
+}
+
+div.price.green {
+  color: #00b74a;
+  font-weight: bold;
+}
+
+div.price.red {
+  color: #e53935;
+  font-weight: bold;
+}
+
+/* Adjust the size of the image */
+main img {
+  display: block;
+  margin: 0 auto 30px;
+  max-width: 25%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  main {
+    padding: 10px;
+  }
+}
+
+/* Animation for transaction entries */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+div.transaction {
+  animation: fadeInOut 0.3s ease;
+}
+
+/* Animation for form elements */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+form input,
+form button {
+  animation: slideIn 0.5s ease;
+}
